@@ -1,0 +1,448 @@
+# Trime default style settings
+# encoding: utf-8
+
+config_version: "3.0"
+name: 暗耀/anyao #方案名稱
+author: ssru
+
+style:
+  auto_caps: false #自動句首大寫:true|false|ascii
+  background_dim_amount: 0.5
+  candidate_font: han.ttf #候選字型
+  candidate_padding: 5 #候選項內邊距
+  candidate_spacing: 1 #候選間距
+  candidate_text_size: 22 #候選字號
+  candidate_use_cursor: true #高亮候選項
+  candidate_view_height: 27 #候選區高度
+  color_scheme: default #配色方案
+  comment_font: comment.ttf #編碼提示字型
+  comment_height: 10 #編碼提示區高度
+  comment_on_top: true #編碼提示在上方或右側
+  comment_text_size: 12 #編碼提示字號
+  hanb_font: hanb.ttf #擴充字型
+  horizontal: false #水平模式
+  horizontal_gap: 1 #鍵水平間距
+  layout: #懸浮窗口設置
+    position: fixed #位置：left|right|left_up|right_up|fixed|bottom_left|bottom_right|top_left|top_right(left、right需要>=Android5.0)
+    min_length: 0 #最小詞長
+    max_length: 100 #超過字數則換行
+    sticky_lines: 0 #固頂行數
+    max_entries: 10 #最大詞條數
+    all_phrases: true #所有滿足條件的詞語都顯示在窗口
+    border: 2 #邊框寬度
+    max_width: 330 #最大寬度，超過則自動換行
+    max_height: 400 #最大高度
+    min_width: 40 #最小寬度
+    min_height: 0 #最小高度
+    margin_x: 5 #水平邊距
+    margin_y: 5 #豎直邊距
+    line_spacing: 10 #候选詞的行間距(px)
+    line_spacing_multiplier: 1.2 #候选詞的行間距(倍數)
+    spacing: 1 #與預編輯或邊緣的距離
+    round_corner: 8 #窗口圓角
+    alpha: 0xdd #透明度(0-255)
+    elevation: 5 #陰影(>=Android5.0)
+    movable: once #是否可移動窗口，或僅移動一次 true|false|once
+  window: #懸浮窗口組件
+    - {start: "", move: '', end: ""}
+    - {start: "", composition: "%s", end: "", letter_spacing: 0} #letter_spacing需要>=Android5.0。TODO: 不爲0時，會導致不換行的問題
+    - {start: "\n", label: "%s.", candidate: "%s", comment: " %s", end: "", sep: " "}
+  key_font: symbol.ttf #鍵盤字型
+  key_height: 44 #鍵高
+  key_long_text_size: 14 #長標籤字號
+  key_text_size: 22 #鍵字號
+  key_width: 10.0 #鍵寬，佔螢幕寬的百分比
+  keyboards: [.default, letter, number, cont, menu] #鍵盤配置：自動鍵盤、字母、數字、符號
+  label_text_size: 22 #標籤字號
+  label_font: label.ttf #編標籤字型
+  latin_font: latin.ttf #西文字型
+  latin_locale: en_US #西文語言
+  locale: zh_CN #預設語言 zh_TW,zh_CN,zh_HK,""
+  preview_font: latin.ttf #按鍵提示字型
+  preview_height: 60 #按鍵提示高度
+  preview_offset: -12 #按鍵提示縱向偏移
+  preview_text_size: 40 #按鍵提示字號
+  proximity_correction: true #按鍵糾錯
+  reset_ascii_mode: false #顯示鍵盤時重置爲中文狀態
+  round_corner: 8 #按鍵圓角半徑
+  shadow_radius: 0.0 #按鍵陰影半徑
+  speech_opencc_config: s2t.json #語音輸入簡繁轉換
+  symbol_font: symbol.ttf #符號字型
+  symbol_text_size: 10 #符號字號
+  text_font: latin.ttf #編碼字型
+  #text_height: 22 #編碼區高度
+  text_size: 16 #編碼區字號
+  vertical_correction: -10
+  vertical_gap: 1 #鍵盤行距
+fallback_colors:
+  candidate_text_color: text_color
+  comment_text_color: candidate_text_color
+  border_color: back_color
+  candidate_separator_color: border_color
+  hilited_text_color: text_color
+  hilited_back_color: back_color
+  hilited_candidate_text_color: hilited_text_color
+  hilited_candidate_back_color: hilited_back_color
+  hilited_comment_text_color: comment_text_color
+  text_back_color: back_color
+  hilited_key_back_color: hilited_candidate_back_color
+  hilited_key_text_color: hilited_candidate_text_color
+  hilited_key_symbol_color: hilited_comment_text_color
+  hilited_off_key_back_color: hilited_key_back_color
+  hilited_on_key_back_color: hilited_key_back_color
+  hilited_off_key_text_color: hilited_key_text_color
+  hilited_on_key_text_color: hilited_key_text_color
+  key_back_color: back_color
+  key_border_color: border_color
+  key_text_color: candidate_text_color
+  key_symbol_color: comment_text_color
+  keyboard_back_color: border_color
+  label_color: candidate_text_color
+  off_key_back_color: key_back_color
+  off_key_text_color: key_text_color
+  on_key_back_color: hilited_key_back_color
+  on_key_text_color: hilited_key_text_color
+  preview_back_color: key_back_color
+  preview_text_color: key_text_color
+  shadow_color: border_color
+
+preset_color_schemes:
+    
+  default:
+    name: 暗耀 / anyao
+    author: 马一文 <mayiwen@outlook>
+    text_color: 0xFFFFFF
+    back_color: 0x717479
+    border_color: 0x101518
+    hilited_text_color: 0xFFFFFF
+    hilited_back_color: 0x404A7B
+    hilited_candidate_text_color: 0xFFFFFF
+    hilited_candidate_back_color: 0x404A7B
+    Ssru: ssru.png #主键背景
+  
+    
+
+android_keys:
+  name: [VoidSymbol, SOFT_LEFT, SOFT_RIGHT, HOME, BACK, CALL, ENDCALL,
+    '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
+    asterisk, numbersign, Up, Down, Left, Right, KP_Begin,
+    VOLUME_UP, VOLUME_DOWN, POWER, CAMERA, Clear,
+    a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z,
+    comma, period, Alt_L, Alt_R, Shift_L, Shift_R, Tab, space,
+    SYM, EXPLORER, ENVELOPE, Return, BackSpace,
+    grave, minus, equal, bracketleft, bracketright, backslash, semicolon, apostrophe, slash, at,
+    NUM, HEADSETHOOK, FOCUS, plus, Menu, NOTIFICATION, Find,
+    MEDIA_PLAY_PAUSE, MEDIA_STOP, MEDIA_NEXT, MEDIA_PREVIOUS, MEDIA_REWIND, MEDIA_FAST_FORWARD, MUTE,
+    Page_Up, Page_Down, PICTSYMBOLS, Mode_switch,
+    BUTTON_A, BUTTON_B, BUTTON_C, BUTTON_X, BUTTON_Y, BUTTON_Z,
+    BUTTON_L1, BUTTON_R1, BUTTON_L2, BUTTON_R2,
+    BUTTON_THUMBL, BUTTON_THUMBR, BUTTON_START, BUTTON_SELECT, BUTTON_MODE,
+    Escape, Delete, Control_L, Control_R, Caps_Lock, Scroll_Lock, Meta_L, Meta_R,
+    function, Sys_Req, Pause, Home, End, Insert, Next,
+    MEDIA_PLAY, MEDIA_PAUSE, MEDIA_CLOSE, MEDIA_EJECT, MEDIA_RECORD,
+    F1, F2, F3, F4, F5, F6, F7, F8, F9, F10, F11, F12,
+    Num_Lock, KP_0, KP_1, KP_2, KP_3, KP_4, KP_5, KP_6, KP_7, KP_8, KP_9,
+    KP_Divide, KP_Multiply, KP_Subtract, KP_Add, KP_Decimal, KP_Separator, KP_Enter, KP_Equal,
+    parenleft, parenright,
+    VOLUME_MUTE, INFO, CHANNEL_UP, CHANNEL_DOWN, ZOOM_IN, ZOOM_OUT,
+    TV, WINDOW, GUIDE, DVR, BOOKMARK, CAPTIONS, SETTINGS,
+    TV_POWER, TV_INPUT, STB_POWER, STB_INPUT, AVR_POWER, AVR_INPUT,
+    PROG_RED, PROG_GREEN, PROG_YELLOW, PROG_BLUE, APP_SWITCH,
+    BUTTON_1, BUTTON_2, BUTTON_3, BUTTON_4, BUTTON_5, BUTTON_6, BUTTON_7, BUTTON_8,
+    BUTTON_9, BUTTON_10, BUTTON_11, BUTTON_12, BUTTON_13, BUTTON_14, BUTTON_15, BUTTON_16,
+    LANGUAGE_SWITCH, MANNER_MODE, 3D_MODE, CONTACTS, CALENDAR, MUSIC, CALCULATOR,
+    Zenkaku_Hankaku, Eisu_toggle, Muhenkan, Henkan, Hiragana_Katakana, yen, RO, Kana_Lock,
+    ASSIST, BRIGHTNESS_DOWN, BRIGHTNESS_UP, MEDIA_AUDIO_TRACK,
+    SLEEP, WAKEUP, PAIRING, MEDIA_TOP_MENU, '11', '12', LAST_CHANNEL, TV_DATA_SERVICE, VOICE_ASSIST,
+    TV_RADIO_SERVICE, TV_TELETEXT, TV_NUMBER_ENTRY, TV_TERRESTRIAL_ANALOG, TV_TERRESTRIAL_DIGITAL,
+    TV_SATELLITE, TV_SATELLITE_BS, TV_SATELLITE_CS, TV_SATELLITE_SERVICE, TV_NETWORK, TV_ANTENNA_CABLE,
+    TV_INPUT_HDMI_1, TV_INPUT_HDMI_2, TV_INPUT_HDMI_3, TV_INPUT_HDMI_4,
+    TV_INPUT_COMPOSITE_1, TV_INPUT_COMPOSITE_2, TV_INPUT_COMPONENT_1, TV_INPUT_COMPONENT_2, TV_INPUT_VGA_1,
+    TV_AUDIO_DESCRIPTION, TV_AUDIO_DESCRIPTION_MIX_UP, TV_AUDIO_DESCRIPTION_MIX_DOWN,
+    TV_ZOOM_MODE, TV_CONTENTS_MENU, TV_MEDIA_CONTEXT_MENU, TV_TIMER_PROGRAMMING,
+    Help, NAVIGATE_PREVIOUS, NAVIGATE_NEXT, NAVIGATE_IN, NAVIGATE_OUT,
+    STEM_PRIMARY, STEM_1, STEM_2, STEM_3,
+    Pointer_UpLeft, Pointer_DownLeft, Pointer_UpRight, Pointer_DownRight,
+    MEDIA_SKIP_FORWARD, MEDIA_SKIP_BACKWARD, MEDIA_STEP_FORWARD, MEDIA_STEP_BACKWARD,
+    SOFT_SLEEP, CUT, COPY, PASTE,
+    SYSTEM_NAVIGATION_UP, SYSTEM_NAVIGATION_DOWN, SYSTEM_NAVIGATION_LEFT, SYSTEM_NAVIGATION_RIGHT,
+    ALL_APPS, REFRESH,
+    A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z,
+    exclam, quotedbl, dollar, percent, ampersand, colon, less, greater, question, asciicircum, underscore, braceleft, bar, braceright, asciitilde]
+  symbols: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ!"$%&:<>?^_{|}~'
+  when:
+    ascii: 西文標籤
+    paging: 翻頁標籤
+    has_menu: 選單標籤
+    composing: 輸入狀態標籤
+    click: 單按
+    long_click: 長按
+  property:
+    width: 寬度
+    height: 高度
+    gap: 間隔
+    preview: 預覽
+    hint: 提示
+    label: 標籤
+    text: 文字
+    states: 狀態標籤
+    repeatable: 連續按鍵
+    functional: 功能鍵
+    shift_lock: Shift鎖定 #ascii_long: 英文長按中文單按鎖定, long: 長按鎖定, click: 單按鎖定
+  action:
+    command: 命令
+    option: 參數
+    select: 選擇
+    toggle: 狀態
+    send: 按鍵
+
+preset_keys:
+  # 安卓
+  BRIGHTNESS_DOWN: {label: 亮度-, send: BRIGHTNESS_DOWN}
+  BRIGHTNESS_UP: {label: 亮度+, send: BRIGHTNESS_UP}
+  CALCULATOR: {label: 计算器, send: CALCULATOR}
+  CALENDAR: {label: 日历, send: CALENDAR}
+  CONTACTS: {label: 电话, send: CONTACTS}
+  ENVELOPE: {label: 邮箱, send: ENVELOPE}
+  EXPLORER: {label: 浏览器, send: EXPLORER}
+  MUSIC: {label: 音乐, send: MUSIC}
+  POWER: {label: 电源, send: POWER}
+  SEARCH: {label: 搜寻, send: Find}
+  SLEEP: {label: 休眠, send: SLEEP}
+  VOICE_ASSIST: {label: 🎤, send: VOICE_ASSIST}
+  VOLUME_DOWN: {label: 音量-, send: VOLUME_DOWN}
+  VOLUME_UP: {label: 音量+, send: VOLUME_UP}
+  VOLUME_MUTE: {label: 静音, send: VOLUME_MUTE}
+  # 編輯
+  Shift_L: {label: "Aa", send: Shift_L, shift_lock: ascii_long}
+  Return: {label: ↵, send: Return}
+  Hide: {label: ﹀, send: BACK}
+  BackSpace: {label: ⌫, repeatable: true, send: BackSpace}
+  space: {repeatable: false, functional: false, send: space}
+  space_ico: {label: ␣, repeatable: false, functional: false, send: space}
+  Escape: {label: Esc, send: Escape}
+  Home: {label: ⇐, send: Home}
+  Insert: {label: ↨, send: Insert}
+  Delete: {label: ⌦, send: Delete}
+  End: {label: ⇒, send: End}
+  Page_Up: {label: △, send: Page_Up}
+  Page_Down: {label: ▽, send: Page_Down}
+  Left: {label: '←', send: Left}
+  Down: {label: '↓', send: Down}
+  Up: {label: '↑', send: Up}
+  Right: {label: '→', send: Right}
+  select_all: {label: ☑, send: Control+a}
+  Clear: {label: ✖, text: "{Control+a}{BackSpace}"} #全選並刪除
+  cut: {label: ✁, send: Control+x}
+  cut_all: {label: ✁, text: "{Control+a}{Control+x}"} #全選並剪切
+  copy: {label: ❐, send: Control+c}
+  copy_all: {label: ❐, text: "{Control+a}{Control+c}"} #全選並複製
+  paste: {label: ✍, send: Control+v}
+  paste_text: {label: 粘贴, send: Control+Shift+Alt+v} #>=Android 6.0
+  share_text: {label: 分享, send: Control+Alt+s} #>=Android 6.0
+  redo: {label: ↪, send: Control+y} #>=Android 6.0
+  undo: {label: ↩, send: Control+z} #>=Android 6.0
+  copy_line: {label: "↔", functional: false, text: "{End}{Shift+Home}{Control+c}"} # 复制行
+  delete_line: {label: "✘", functional: false, text: "{End}{Shift+Home}{Delete}{BackSpace}"} # 复制行
+  insert_up: {label: "↰", functional: false, text: "{Home}{Return}{Up}"} # 上插一行
+  insert_down: {label: "↴", functional: false, text: "{End}{Return}"} # 下插一行
+  delete4: {label: "✖", functional: false, text: "{BackSpace}{BackSpace}{BackSpace}{BackSpace}"} # 删除4个
+  
+  Shift_edit: {label: ☩, functional: false, send: Shift_L, shift_lock: click} # 英文状态一次锁定
+
+  # rime組合鍵
+  F4: {label: 方案选单, send: F4}
+  BackToPreviousSyllable: {label: 删音节, send: Control+BackSpace}
+  CommitRawInput: {label: 编码, send: Control+Return}
+  CommitScriptText: {label: 编码, send: Shift+Return}
+  CommitComment: {label: 编码, send: Control+Shift+Return}
+  DeleteCandidate: {label: 删词, send: Control+Delete}
+  # rime狀態
+  Mode_switch: {toggle: ascii_mode, send: Mode_switch, states: [ 中, en ]}
+  Zenkaku_Hankaku: {toggle: full_shape, send: Mode_switch, states: [ 半角, 全角 ]}
+  Henkan: {toggle: simplification, send: Mode_switch, states: [ 漢字, 汉字 ]}
+  Charset_switch: {toggle: extended_charset, send: Mode_switch, states: [ 常用, 增广 ]}
+  Punct_switch: {toggle: ascii_punct, send: Mode_switch, states: [ 。，, ．， ]}
+  # trime設定
+  IME_switch: {label: 🌐, send: LANGUAGE_SWITCH} #彈出對話框選擇輸入法
+  IME_last: {label: 上一输入法, send: LANGUAGE_SWITCH, select: .last} #直接切換到上一輸入法
+  IME_next: {label: 下一输入法, send: LANGUAGE_SWITCH, select: .next} #直接切換到下一輸入法
+  Keyboard_number: {label: 12, send: Eisu_toggle, select: number}
+  Keyboard_letter: {label: 字母, send: Eisu_toggle, select: default}
+  Keyboard_default: {label: 返回, send: Eisu_toggle, select: .default}
+  Keyboard_cont: {label: ↭, send: Eisu_toggle, select: cont}
+  Keyboard_menu: {label: ☰, send: Eisu_toggle, select: menu}
+  Keyboard_switch: {label: 键盘, send: Eisu_toggle, select: .next}
+  Schema_switch: {label: 下一方案, send: Control+Shift+1}
+  Color_switch: {label: 配色, send: PROG_RED}
+  Help: {label: 说明, send: Help}
+  Info: {label: 关于, send: INFO}
+  Menu: {label: 选单, send: Menu}
+  Settings: {label: ⚙, send: SETTINGS}
+  Color_settings: {label: 配色, send: SETTINGS, option: "color"}
+  Theme_settings: {label: 主题, send: SETTINGS, option: "theme"}
+  Schema_settings: {label: 方案, send: SETTINGS, option: "schema"}
+  Candidate_switch: {toggle: _hide_candidate, send: Mode_switch, states: [ 有候选, 无候选]}
+  Comment_switch: {toggle: _hide_comment, send: Mode_switch, states: [ 有注释, 无注释]}
+  Hint_switch: {toggle: _hide_key_hint, send: Mode_switch, states: [ 有助记, 无助记]}
+  # trime命令
+  Date: {label: 日期, command: date, option: "yyyy-MM-dd"}
+  ChineseDate: {label: 农历, command: date, option: "zh_CN@calendar=chinese"} #農曆等日期(>=Android 7.0)：date 語言@calendar=曆法 格式。具體參見https://developer.android.com/reference/android/icu/util/Calendar.html
+  Time: {label: 时间, command: date, option: "HH:mm:ss"} #時間： date 格式
+  TrimeApp: {label: 同文, command: run, option: "com.osfans.trime"} #運行程序: run 包名
+  TrimeCmp: {label: 同文组件, command: run, option: "com.osfans.trime/.Pref"} #運行程序指定組件: run 包名/組件名
+  Homepage: {label: 同文主页, command: run, option: "https://github.com/osfans/trime"} #查看網頁: run 網址
+  Wiki: {label: 维基, command: run, option: "https://zh.wikipedia.org/wiki/%s"} #搜索網頁: %s或者%1$s爲當前字符
+  Google: {label: 谷歌, command: run, option: "https://www.google.com/search?q=%s"} #搜索網頁: %s或者%1$s爲當前字符
+  MoeDict: {label: 萌典, command: run, option: "https://www.moedict.tw/%3$s"} #搜索網頁: %3$s爲光標前字符
+  Baidu: {label: 百度搜索, command: run, option: "https://www.baidu.com/s?wd=%4$s"} #搜索網頁: %4s爲光標前所有字符
+  Zdic: {label: 汉典, command: run, option: "http://www.zdic.net/sousuo/?q=%1$s"} #搜索網頁: %s或者%1$s爲當前字符
+  Zdic2: {label: 汉典, command: run, option: "http://www.zdic.net/sousuo/?q=%2$s"} #搜索網頁: %2$s爲當前輸入的編碼
+  WebSearch: {label: 搜索网页, command: web_search, option: "%4$s"} #搜索，其他view、dial、edit、search等intent，參考安卓的intent文檔：https://developer.android.com/reference/android/content/Intent.html
+  Search: {label: 搜索, command: search, option: "%1$s"} #搜索短信、字典等
+  Share: {label: 分享, command: send, option: "%s"} #分享指定文本: %s或者%1$s爲當前字符
+  Deploy: {label: 部署, command: broadcast, option: "com.osfans.trime.deploy"}
+  Sync: {label: 同步, command: broadcast, option: "com.osfans.trime.sync"}
+
+preset_keyboards:
+  default:
+    name: 思思
+    author: "思思如矢 mayiwen@outlook.com"
+    ascii_mode: 0
+    width: 10
+    height: 54
+    lock: true #切換程序時記憶鍵盤
+    keys:
+    - {click: '1', long_click: Left}
+    - {click: '2', long_click: Right}
+    - {click: '3', long_click: Home}
+    - {click: '4', long_click: End}
+    - {click: '5', long_click: select_all}
+    - {click: '6', long_click: copy}
+    - {click: '7', long_click: cut}
+    - {click: '8', long_click: paste}
+    - {click: '9', long_click: Tab}
+    - {click: '0', long_click: delete4}
+    - {click: 'q', long_click: "+"}
+    - {click: 'w', long_click: "-"}
+    - {click: 'e', long_click: "*"}
+    - {click: 'r', long_click: "/"}
+    - {click: 't', long_click: "%"}
+    - {click: 'y', long_click: "="}
+    - {click: 'u', long_click: "["}
+    - {click: 'i', long_click: "]"}
+    - {click: 'o', long_click: "{"}
+    - {click: 'p', long_click: "}"}
+    - {click: 'a', long_click: "<"}
+    - {click: 's', long_click: ">"}
+    - {click: 'd', long_click: "\\"}
+    - {click: 'f', long_click: "|"}
+    - {click: 'g', long_click: "~"}
+    - {click: 'h', long_click: "@"}
+    - {click: 'j', long_click: "("}
+    - {click: 'k', long_click: ')'}
+    - {click: 'l', long_click: '"'}
+    - {click: ';', long_click: ":"}
+    - {click: 'z', long_click: "?"}
+    - {click: 'x', long_click: "!"}
+    - {click: 'c', long_click: "_"}
+    - {click: 'v', long_click: "&"}
+    - {click: 'b', long_click: "#"}
+    - {click: 'n', long_click: "^"}
+    - {click: 'm', long_click: "$"}
+    - {click: ',', long_click: "`"}
+    - {click: '.', long_click: "'"}
+    - {click: BackSpace}
+    - {click: Shift_L, composing: Escape, width: 15}
+    - {click: Keyboard_cont, long_click: Keyboard_menu, composing: Page_Up, width: 15}
+    - {click: space, width: 40, key_back_color: Ssru}
+    - {click: Mode_switch, long_click: Keyboard_number, composing: Page_Down, width: 15}
+    - {click: Return, long_click: VOICE_ASSIST, width: 15}
+  letter:
+    __include: /preset_keyboards/default
+    ascii_mode: 1
+    lock: false
+  number:
+    name: 数字
+    author: "思思如矢 mayiwen@outlook.com"
+    width: 20
+    height: 54
+    keys:
+    - {click: '+'}
+    - {click: '7'}
+    - {click: '8'}
+    - {click: '9'}
+    - {click: Delete}
+    - {click: '-'}
+    - {click: '4'}
+    - {click: '5'}
+    - {click: '6'}
+    - {click: Left}
+    - {click: '*'}
+    - {click: '1'}
+    - {click: '2'}
+    - {click: '3'}
+    - {click: Right}
+    - {click: '/'}
+    - {click: '0'}
+    - {click: '.'}
+    - {click: '='}
+    - {click: BackSpace}
+    - {click: '%'}
+    - {click: Keyboard_cont}
+    - {click: space_ico}
+    - {click: Keyboard_default}
+    - {click: Return}
+  cont:
+    name: 控制
+    author: "思思如矢 mayiwen@outlook.com"
+    width: 20
+    height: 54
+    keys:
+    - {click: select_all}
+    - {click: copy}
+    - {click: cut}
+    - {click: paste}
+    - {click: Delete}
+    - {click: redo}
+    - {click: Home}
+    - {click: Up}
+    - {click: End}
+    - {click: copy_line}
+    - {click: undo}
+    - {click: Left}
+    - {click: Shift_edit}
+    - {click: Right}
+    - {click: delete_line}
+    - {click: insert_up}
+    - {click: Page_Up}
+    - {click: Down}
+    - {click: Page_Down}
+    - {click: BackSpace}
+    - {click: insert_down}
+    - {click: Keyboard_default}
+    - {click: space_ico}
+    - {click: Keyboard_number}
+    - {click: Return}
+  menu:
+    name: 设置
+    author: "思思如矢 mayiwen@outlook.com"
+    width: 20
+    height: 54
+    keys:
+    - {click: Settings, width: 33.3} # 设置
+    - {click: Schema_settings, width: 33.3} # 方案
+    - {click: Menu, width: 33.3} # 选单
+    - {click: IME_switch, width: 33.3} # 方案切换
+    - {click: Theme_settings, width: 33.3} # 主题
+    - {click: Color_settings, width: 33.3} # 配色
+    - {click: Candidate_switch, width: 33.3} # 候选
+    - {click: Hint_switch, width: 33.3} # 助记
+    - {click: Comment_switch, width: 33.3} # 注释
+    - {click: VOLUME_DOWN, width: 33.3} # 声音减
+    - {click: VOLUME_UP, width: 33.3} # 声音加
+    - {click: VOLUME_MUTE, width: 33.3} # 静音
+    - {click: Keyboard_default, width: 33.3} # 返回默认键盘
+    - {click: EXPLORER, width: 33.3} # 浏览器
+    - {click: VOICE_ASSIST, width: 33.3} # 语音
+
